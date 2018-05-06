@@ -13,13 +13,12 @@
 #import <React/RCTRootView.h>
 
 @implementation AppDelegate
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   NSURL *jsCodeLocation;
 
   jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-
+//  jsCodeLocation = [NSURL URLWithString: [NSString stringWithFormat:@"http://%@/index.ios.bundle?platform=ios&dev=false",@"192.254.1.4:8081"]];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                                       moduleName:@"SupplierManagement"
                                                initialProperties:nil

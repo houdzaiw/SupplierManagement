@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\app\\SupplierManagement\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+        "outputFile": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 125
                 },
                 "from": {
-                    "file": "C:\\Users\\LYM\\.android\\build-cache\\e71a713124e544aa6e2227fdd53ed5367c5db9db\\output\\res\\values-v22\\values-v22.xml",
+                    "file": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/values-v22/values-v22.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 212
                 },
                 "from": {
-                    "file": "C:\\Users\\LYM\\.android\\build-cache\\e71a713124e544aa6e2227fdd53ed5367c5db9db\\output\\res\\values-v22\\values-v22.xml",
+                    "file": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/values-v22/values-v22.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -50,7 +50,7 @@
                     "endOffset": 393
                 },
                 "from": {
-                    "file": "C:\\Users\\LYM\\.android\\build-cache\\e71a713124e544aa6e2227fdd53ed5367c5db9db\\output\\res\\values-v22\\values-v22.xml",
+                    "file": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/values-v22/values-v22.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -71,7 +71,7 @@
                     "endOffset": 586
                 },
                 "from": {
-                    "file": "C:\\Users\\LYM\\.android\\build-cache\\e71a713124e544aa6e2227fdd53ed5367c5db9db\\output\\res\\values-v22\\values-v22.xml",
+                    "file": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/values-v22/values-v22.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,

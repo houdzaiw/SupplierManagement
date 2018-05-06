@@ -63,74 +63,33 @@ class userscreen extends Component {
         return (
            <View style={{marginTop:global.globConfig.iOS_STATUSBAR_HEIGHT}}>
             <View>
+                <TouchableOpacity activeOpacity={1} onPress={this.choosePic.bind(this)}>
                 <View style={{
                     flexDirection: 'row', /*borderColor: '#FFF',borderWidth: 1,
                     borderStyle: 'solid',*/ height: 80, backgroundColor: "#FFF",marginBottom:10,
 
                 }}>
-                    <Text onPress={this.choosePic.bind(this)} style={{marginLeft: 10, marginTop: 25, fontSize: 20,color:"#000"}}>头像</Text>
+                    <Text  style={{marginLeft: 10, marginTop: 25, fontSize: 20,color:"#000"}}>头像</Text>
                     <Image  style={{width: 50, height: 50,marginLeft:250,marginTop:10,}}
                            source={this.state.avatarSource}/>
 
                 </View>
+                </TouchableOpacity>
+                <TouchableOpacity activeOpacity={1} onPress={this._toUpdateNc} >
                 <View style={{
                     flexDirection: 'row', /*borderColor: '#FFF',borderWidth: 1,
                     borderStyle: 'solid', */height: 50, backgroundColor: "#FFF",marginBottom:10,
 
                 }}>
-                    <Text onPress={this._toUpdateNc} style={{fontSize: 18, marginLeft: 10, marginTop: 15,
+                    <Text  style={{fontSize: 18, marginLeft: 10, marginTop: 15,
                         color:"#000"}}>昵称</Text>
-                    <Text style={{marginLeft:240, marginTop: 15,color:"#797979",fontSize:16,}}>你好，明天</Text>
+                    <Text style={{marginLeft:240, marginTop: 15,color:"#797979",fontSize:16,}}>{global.config.user.loginName}</Text>
                 </View>
-                <View style={{
-                    flexDirection: 'row',
-                    height: 50, backgroundColor: "#FFF",marginBottom:10,
-                    /*borderColor:'#ccc', borderStyle:'solid',borderWidth:0.5,*/
-                }}>
-                    <Text style={{fontSize: 18, marginLeft: 10, marginTop: 15,color:"#000"}}>性别</Text>
-                    <Text style={{fontSize: 18, marginLeft: 300, marginTop: 15,color:"#797979",fontSize:16,}}>女</Text>
-                </View>
+                </TouchableOpacity>
+
             </View>
             </View>
 
-
-
-
-
-                /*<View>
-                    <View style={{
-                    flexDirection: 'row', borderColor: '#ccc',
-                    borderStyle: 'solid', height: 80, backgroundColor: "#FFF",
-                    borderWidth: 1,
-                }}>
-                     <TouchableOpacity onPress={this.choosePic.bind(this)}>
-                    <Text onPress={this.choosePic.bind(this)} style={{marginLeft: 10, marginTop: 25, fontSize: 20,color:"#000"}}>头像</Text>
-                     </TouchableOpacity>
-                    <Image  style={{width: 50, height: 50,marginLeft:250,marginTop:10,}}
-                            source={this.state.avatarSource}/>
-                </View>
-
-                    <View style={{
-                        flexDirection: 'row', borderColor: '#ccc',
-                        borderStyle: 'solid', height: 50, backgroundColor: "#FFF",
-                        borderWidth: 1,
-                    }}>
-                        <TouchableOpacity onPress={this._toUpdateNc}>
-                        <Text  style={{marginLeft: 10, marginTop: 15, fontSize: 18,color:"#000"}}>昵称</Text>
-                        </TouchableOpacity>
-                        <Text style={{fontSize: 16,marginLeft:240, marginTop: 15,color:"#797979",}}>你好，明天</Text>
-                    </View>
-
-                    <View style={{
-                        flexDirection: 'row', borderColor: '#ccc',
-                        borderStyle: 'solid', height: 50, backgroundColor: "#FFF",
-                        borderWidth: 1,
-                    }}>
-                        <Text  style={{marginLeft: 10, marginTop: 15, fontSize: 18,color:"#000"}}>性别</Text>
-                        <Text style={{fontSize: 16,marginLeft:240, marginTop: 15,color:"#797979",}}>女</Text>
-                    </View>
-
-                </View>*/
         );
     }
 }

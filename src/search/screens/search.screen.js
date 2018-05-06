@@ -56,6 +56,8 @@ class searchscreen extends Component {
     }
 
     render() {
+        //获取上一页的参数，
+        const { params } = this.props.navigation.state;
         return (
             <View style={{marginTop:global.globConfig.iOS_STATUSBAR_HEIGHT}}>
             <View style={{ backgroundColor:'#FFF'}}>
@@ -68,11 +70,16 @@ class searchscreen extends Component {
                         placeholder="请输入搜索内容"
                         style={{height: 36, backgroundColor:'#ccc', borderRadius: 5,flexDirection: 'row',flex:1}}
                         onChangeText={(input) => this.setState({keyword: input})}
+                        autoFocus={true}
+                        //value={(params.data.length !== 0) ? params.data : ''}//将data传递过来
                     />
-                    <View style={{width:50,height:36,flexDirection: 'row',textAlign:'right',justifyContent: 'center', alignItems: 'center'}}>
+                    <View style={{width:55,height:32,flexDirection: 'row',justifyContent: 'center',
+                        alignItems: 'center',backgroundColor:'#0084FF',marginRight:5,}}>
                         <Button
                             onPress={() => {this._ToSearchList()}}
                             title="搜索"
+                            color='#ffffff'
+                            fontsize='14'
                         />
                     </View>
                 </View>

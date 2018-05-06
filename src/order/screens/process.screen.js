@@ -13,104 +13,6 @@ import {Icon} from 'react-native-elements';
 
 
 class processscreen extends Component {
-
-
-    /*render(){
-        return(
-            <View style={styles.AA}>
-                <View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={styles.view2}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View style={{borderColor:"red",}}>
-                            <Text style={styles.date}>2017-12-4  12:40:17</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>订单创建人:小明</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>2017-12-5  12:40:12</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>订单状态:待审核</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={styles.view2}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>2017-12-6  14:15:10</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>订单状态：已审核</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>2017-12-4  12:40</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>订单创建人:小明</Text>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>2017-12-4  12:40</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>订单创建人:小明</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-            </View>
-        )
-    }*/
-
     constructor(props) {
         super(props);
 
@@ -126,13 +28,10 @@ class processscreen extends Component {
     componentWillMount() {
         this.fetchData();
     }
-    componentDidMount() {
-
-    }
-
     fetchData (){
         const {limit} = this.state;
-        const url = 'http://rapapi.org/mockjsdata/26918/set';
+        const { params } = this.props.navigation.state;
+        const url = global.config.url+'/mobile/chart?ddh='+params.data+'&yyid=53010301';
         this.setState({loading: true});
         fetch(url)
             .then((response) => response.json())
@@ -181,9 +80,9 @@ class processscreen extends Component {
                         <View style={styles.view3}></View>
                     </View>
                     <View style={{borderColor:"red",}}>
-                    <Text style={styles.date}>{/*item.price*/}2017-12-4 12:40:07</Text>
+                    <Text style={styles.date}>{item.cjsj}</Text>
                     <View style={styles.date1}>
-                        <Text style={styles.date2}>{/*item.price*/}创建人：小红</Text>
+                        <Text style={styles.date2}>{item.ddztName}</Text>
                     </View>
                     </View>
                 </View>
@@ -192,100 +91,6 @@ class processscreen extends Component {
             </View>
         );
 
-
-        return1111(
-            <View style={styles.AA}>
-                <View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={styles.view2}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View style={{borderColor:"red",}}>
-                            <Text style={styles.date}>{item.price}</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>{item.price}</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>{item.price}</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>{item.price}</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={styles.view2}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>{item.price}</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>{item.price}</Text>
-                            </View>
-                        </View>
-                    </View>
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>{item.price}</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>{item.price}</Text>
-                            </View>
-                        </View>
-                    </View>
-
-                    <View style={styles.test}>
-                        <View>
-                            <View style={styles.view1}></View>
-                            <View style={{backgroundColor:"#1ED296",
-                                borderColor:'#ccc',
-                                height:11,
-                                width:11,
-                                borderStyle:'solid',
-                                borderWidth:0.5,
-                                borderRadius: 50,
-                                marginLeft:6,}}></View>
-                            <View style={styles.view3}></View>
-                        </View>
-                        <View>
-                            <Text style={styles.date}>{item.price}</Text>
-                            <View style={styles.date1}>
-                                <Text style={styles.date2}>{item.price}</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-            </View>
-        )
     }
     render(){
         return(

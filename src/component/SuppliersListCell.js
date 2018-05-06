@@ -27,25 +27,25 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     textTitle: {
-        textAlign: 'left',
+        //textAlign: 'center',
         fontSize: 16,
         fontWeight: '300',
         color: 'black',
         marginBottom: 12
     },
     textContent: {
-        textAlign: 'left',
+        //textAlign: 'center',
         fontSize: 14,
         color: '#444444',
         marginBottom: 3
     },
     textHeader: {
-        textAlign: 'left',
+        //textAlign: 'center',
         fontSize: 14,
         color: '#999999'
     },
     textFooter: {
-        textAlign: 'left',
+       // textAlign: 'center',
         fontSize: 14,
         color: '#999999',
         marginTop: 10

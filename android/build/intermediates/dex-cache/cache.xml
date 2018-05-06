@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="D:\app\SupplierManagement\node_modules\react-native-vector-icons\android\build\intermediates\bundles\default\classes.jar"
+        jar="/Users/yujingkun/Desktop/MyProject/SupplierManagement/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
-        <dex dex="D:\app\SupplierManagement\android\app\build\intermediates\pre-dexed\debug\classes_47e1c12d8dcc53d0f30adbf964e756eaf7dd0c2e.jar" />
+        <dex dex="/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/pre-dexed/release/classes_03af3f134e2591284c255694e25a0a94a1d04568.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\app\SupplierManagement\node_modules\react-native-image-picker\android\build\intermediates\bundles\default\classes.jar"
+        jar="/Users/yujingkun/Desktop/MyProject/SupplierManagement/node_modules/react-native-image-picker/android/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
-        <dex dex="D:\app\SupplierManagement\android\app\build\intermediates\pre-dexed\debug\classes_a438ef04df2a744c3fc27714620332d70f482e07.jar" />
+        sha1="ad3c33c320b4d0b7504e97aa46a185dea8bd1f1c">
+        <dex dex="/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/pre-dexed/release/classes_47e2bc7797e3f046ef73d0b223de176bca214fcb.jar" />
     </item>
 
 </items>

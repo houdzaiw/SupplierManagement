@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, TextInput, View, Text, Button, StyleSheet,TouchableHighlight, FlatList} from 'react-native';
+import {AppRegistry, TextInput, View, Text, Button, StyleSheet,TouchableHighlight, FlatList,ActivityIndicator,} from 'react-native';
 import {Icon} from 'react-native-elements';
 
 class searchlistscreen extends Component {
@@ -11,6 +11,7 @@ class searchlistscreen extends Component {
             data:[],
             error: null,
             refreshing: false,
+
         }
     }
 

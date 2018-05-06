@@ -10,7 +10,7 @@ import {
     Platform,
     Button,
     Text,
-    TextInput
+    TextInput,
 } from 'react-native';
 import {Icon} from "react-native-elements"
 import styleConfig from './src/config/styles_config';
@@ -37,13 +37,20 @@ import goods_sp from './src/order/screens/goods.screen';
 import orderlist from './src/order/screens/order-list';
 import ddss from './src/order/screens/order.search';
 import order from './src/order/screens/order.search';
+import  cps from './src/product/screens/cp';
+import ssb from './src/order/screens/operation.screen';
+import wz from './src/order/screens/wuzi.screen';
+ //import calendar from './src/order/screens/calendar';
+import agenda from './src/order/screens/agenda';
+import  tp from './src/component/ImageShow';
+import forget from './src/user/screens/forgetpassword';
+
 
 
 
 
 global.globConfig = styleConfig;
 const MainScreenNavigator = TabNavigator({
-
     Supplier:{
         screen: supplierlistscreen,
         navigationOptions:{
@@ -59,10 +66,17 @@ const MainScreenNavigator = TabNavigator({
             tabBarLabel:'厂商',
             tabBarIcon:({tintColor}) => <Icon name={"folder-open"} size={20} color={tintColor}/>,
         }},*/
-    Company:{
+    /*Company:{
         screen:orderlist,
         navigationOptions:{
             tabBarLabel:'订单',
+            tabBarIcon:({tintColor}) => <Icon name={"folder-open"} size={20} color={tintColor}/>,
+        }},*/
+    Agenda:{
+        screen:agenda,
+        navigationOptions:{
+            tabBarLabel:'订单',
+            headerTitleStyle: {alignSelf:'center',fontSize: 18, color: '#F9F9FA',marginRight:60},
             tabBarIcon:({tintColor}) => <Icon name={"folder-open"} size={20} color={tintColor}/>,
         }},
 
@@ -70,14 +84,15 @@ const MainScreenNavigator = TabNavigator({
         screen:productsListScreen,
         navigationOptions:{
             tabBarLabel:'产品',
-            tabBarIcon:({tintColor}) => (<Image source={require('./asset/1.png')} style={[{tintColor: tintColor,height:20,width:20}]}/>),
+            //tabBarIcon:({tintColor}) => (<Image source={require('./asset/1.png')} style={[{tintColor: tintColor,height:20,width:20}]}/>),
+            tabBarIcon:({tintColor}) => <Icon name={"home"} size={20} color={tintColor}/>,
         }},
 
     User:{
         screen:userscreen,
         navigationOptions:{
             tabBarLabel:'我的',
-            headerTitleStyle: {alignSelf:'center',fontSize: 18, color: '#F9F9FA',},
+            headerTitleStyle: {alignSelf:'center',fontSize: 18, color: '#F9F9FA',marginRight:60},
             tabBarIcon:({tintColor}) => <Icon name={"person"} size={20} color={tintColor}/>,
         }
     },
@@ -86,6 +101,7 @@ const MainScreenNavigator = TabNavigator({
     tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
     swipeEnabled: false, // 是否可以左右滑动切换tab
     backBehavior: 'none', // 按 back 键是否跳转到第一个Tab(首页)， none 为不跳转
+    lazy:true,
     tabBarOptions: {
         activeTintColor: '#0084FF', // 文字和图片选中颜色
         inactiveTintColor: '#999', // 文字和图片未选中颜色
@@ -95,7 +111,7 @@ const MainScreenNavigator = TabNavigator({
         },
         style: {
             backgroundColor: '#fff', // TabBar 背景色
-            // height: 44
+             //height: 44
         },
         labelStyle: {
             fontSize: 10, // 文字大小,
@@ -106,7 +122,16 @@ const MainScreenNavigator = TabNavigator({
 const SimpleApp = StackNavigator({
     login: { screen: login,
         navigationOptions: {
-             header:null,
+            headerTitle: '登录',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
         }},
     Home:{
         screen:MainScreenNavigator,
@@ -204,6 +229,7 @@ const SimpleApp = StackNavigator({
             },
         }},
 
+
     /*user_dd: { screen:  user_dd,
         navigationOptions: {
             headerTitle: '我的订单',
@@ -271,6 +297,81 @@ const SimpleApp = StackNavigator({
                 backgroundColor: '#CCCCCC',
             },
         }},
+    //产品页测试
+    cps: { screen: cps,
+        navigationOptions: {
+            headerTitle: '产品',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
+        }},
+
+
+    ssb: { screen: ssb,
+        navigationOptions: {
+            headerTitle: '手术包详情',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
+        }},
+
+    wz: { screen: wz,
+        navigationOptions: {
+            headerTitle: '物资',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
+        }},
+
+    agenda: { screen: agenda,
+        navigationOptions: {
+            headerTitle: '日历',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
+        }},
+
+    forget:{ screen: forget,
+        navigationOptions: {
+            headerTitle: '找回密码',
+            headerTitleStyle: {
+                fontSize: 14,
+                color: '#F9F9FA',
+            },
+            headerStyle: {
+                height: 50,
+                /*marginBottom: 15,*/
+                backgroundColor: '#CCCCCC',
+            },
+        }},
+
+
+
+
 
 
 });

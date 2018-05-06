@@ -22,7 +22,7 @@ class TopBar extends Component{
 const styles = StyleSheet.create({
     item:{
         flex: 1,
-        textAlign:'center',
+        //textAlign:'center',
         alignItems:'center',
         justifyContent: 'center',
         //backgroundColor:'#FFF',

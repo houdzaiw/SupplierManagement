@@ -7,27 +7,28 @@ class TopBanner extends Component{
 
 
     render() {
-        let wzzs=100;let changjia=100; let gongyingshang=10;
+        //let wzzs=100;let changjia=100; let gongyingshang=10;
         return (
             <View style={styles.rootview}>
                 <View  style={[styles.item]}>
+                    <TouchableOpacity onPress={ this.props.callBackSupplier2 &&  this.props.callBackSupplier2}>
                     <Text style={this.props.active==1? styles.active:null}>供应商</Text>
-                    <Text style={this.props.active==1? styles.active:null}>{gongyingshang}</Text>
+                    </TouchableOpacity>
                 </View>
                 <View  style={[styles.item]}>
                     <TouchableOpacity onPress={ this.props.callBackSupplier &&  this.props.callBackSupplier}>
                     <Text   style={this.props.active==2? styles.active:null}>生产厂家</Text>
                     </TouchableOpacity>
-                    <Text style={this.props.active==2? styles.active:null}>{changjia}</Text>
                 </View>
                 <View  style={[styles.item]}>
-                    <Text style={this.props.active==3? styles.active:null}>物资总数</Text>
-                    <Text style={this.props.active==3? styles.active:null}>{wzzs}</Text>
+                    <TouchableOpacity onPress={ this.props.callBackSupplier1 &&  this.props.callBackSupplier1}>
+                    <Text style={this.props.active==3? styles.active:null}>产品总数</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
            );
     }
-}
+} //<Text style={this.props.active==1? styles.active:null}>{gongyingshang}</Text>
 
 const styles = StyleSheet.create({
     active:{
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     },
     item:{
         flex: 1,
-        textAlign:'center',
+        //textAlign:'center',
         alignItems:'center',
         justifyContent: 'center',
         //backgroundColor:'#FFF',
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
     rootview:{
         flexDirection: 'row',
         height: 50,
-        backgroundColor: '#FFF',
+        backgroundColor: '#f3f3f3',
         borderTopColor:'#CCCCCC',
         borderTopWidth:1,
     }

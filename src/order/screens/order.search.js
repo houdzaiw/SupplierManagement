@@ -68,10 +68,12 @@ class ordersearch extends Component {
                         style={{height: 36, backgroundColor:'#ccc', borderRadius: 5,flexDirection: 'row',flex:1}}
                         onChangeText={(input) => this.setState({keyword: input})}
                     />
-                    <View style={{width:50,height:36,flexDirection: 'row',textAlign:'right',justifyContent: 'center', alignItems: 'center'}}>
+                    <View style={{width:55,height:32,flexDirection: 'row',textAlign:'right',justifyContent: 'center', alignItems: 'center',
+                        backgroundColor:'#FDA313',marginRight:5,}}>
                         <Button
                             onPress={() => {this._ToSearchList()}}
                             title="搜索"
+                            color='#ffffff'
                         />
                     </View>
                 </View>

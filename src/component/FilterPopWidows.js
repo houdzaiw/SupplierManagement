@@ -8,21 +8,21 @@ class FilterPopWidows extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isVisible: this.props.show,
+            // isVisible: this.props.show,
+            isVisible:false,
             gys_data: [{name: '上海商略商贸公司'}, {name: '上海商略商贸公司'}, {name: '上海商略商贸公司'}, {name: '上海商略商贸公司'}, {name: '上海商略商贸公司'}],
             cs_data: [{name: '上海三友'}, {name: '昆明炬森'}, {name: '北京富乐'},],
         }
     }
 
     componentWillReceiveProps(nextProps) {
-        this.setState({isVisible: nextProps.show});
+        // this.setState({isVisible: nextProps.show});
     }
 
-    closeModal() {
+    openModal(isVisible) {
         this.setState({
-            isVisible: false
+            isVisible: isVisible
         });
-        this.props.closeModal(false);
     }
 
     renderList(list) {
@@ -30,63 +30,71 @@ class FilterPopWidows extends Component {
     }
 
     renderItem(item) {
+
         return (
-            <TouchableOpacity activeOpacity={1} style={styles.itemView}>
+            <TouchableOpacity activeOpacity={1} style={styles.itemView} onPress={()=>{
+                this.props.callBackParam && this.props.callBackParam(item.name)
+            }}>
                 <Text style={styles.textStyle}>{item.name}</Text>
             </TouchableOpacity>
         );
     }
-
+    renderContent(){
+        return(
+            <View style={styles.container} activeOpacity={1} onPress={() => this.openModal(false)}>
+                <View style={styles.modal}>
+                    <View style={{flex:1}}>
+                        <Text style={styles.textStyle}>供应商名称</Text>
+                        <View style={styles.businessName}>
+                            {this.renderList(this.state.gys_data)}
+                        </View>
+                    </View>
+                    <View style={{flex:1,marginTop:25}}>
+                        <Text style={styles.textStyle}>厂商名称</Text>
+                        <View style={styles.businessName}>
+                            {this.renderList(this.state.cs_data)}
+                        </View>
+                    </View>
+                    <View style={{flexDirection: 'row',flexWrap: 'wrap',justifyContent:'center',alignItems: 'center',height:40}}>
+                        <Text onPress={()=>this.openModal(false)}
+                              style={{padding:3,borderRadius: 10,flex: 1,flexDirection: 'row',justifyContent:'center',
+                                  alignItems: 'center',textAlign:'center'}}>
+                            关闭
+                        </Text>
+                        {/*<Text style={{padding:3,borderRadius: 10,flexDirection: 'row',flex: 1,justifyContent:'center',alignItems: 'center',textAlign:'center'}}>确定</Text>*/}
+                    </View>
+                </View>
+            </View>
+        )
+    }
     render() {
         return (
-            <View style={styles.container}>
-                <Modal
-                    transparent={true}
-                    visible={this.state.isVisible}
-                    animationType={'fade'}
-                    onRequestClose={() => this.closeModal()}>
-                    <TouchableOpacity style={styles.container} activeOpacity={1} onPress={() => this.closeModal()}>
-                        <View style={styles.modal}>
-                            <Text style={styles.textStyle}>供应商名称</Text>
-                            <View style={{flexDirection: 'row',flex: 1,flexWrap: 'wrap',alignItems: 'center',}}>
-                                {this.renderList(this.state.gys_data)}
-                            </View>
-                            <Text style={styles.textStyle}>厂商名称</Text>
-                            <View style={{flexDirection: 'row',flex: 1,flexWrap: 'wrap',alignItems: 'center',}}>
-                                {this.renderList(this.state.cs_data)}
-                            </View>
-                            <View style={{flexDirection: 'row',flex: 1,flexWrap: 'wrap',justifyContent:'center',alignItems: 'center',marginTop:50}}>
-                                <Text style={{flex: 1}}/>
-                                <Text onPress={()=>this.closeModal()} style={{backgroundColor: '#00CCFF',padding:3,borderRadius: 10,flex: 1,flexDirection: 'row',justifyContent:'center',alignItems: 'center',textAlign:'center'}}>取消</Text>
-                                <Text style={{flex: 1}}/>
-                                <Text style={{backgroundColor: '#00CCFF',padding:3,borderRadius: 10,flexDirection: 'row',flex: 1,justifyContent:'center',alignItems: 'center',textAlign:'center'}}>确定</Text>
-                                <Text style={{flex: 1}}/>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
-                </Modal>
-            </View>
+            <Modal
+                transparent={true}
+                visible={this.state.isVisible}
+                animationType={'fade'}
+                // onRequestClose={() => this.openModal(true)}
+            >
+                <View style={{flex:1}}>
+                    {this.renderContent()}
+                </View>
+            </Modal>
         );
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: width,
-        height: height,
+        flex:1,
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
     },
     modal: {
+        marginTop:95,
         backgroundColor: '#FFF',
-        width: width,
-        //height: height/2,
-        position: 'absolute',
-        left: 0,
-        top: 55,
-        padding: 5,
+        height: height/3,
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: 0,
+        paddingVertical:20,
     },
     itemView: {
         margin:2,
@@ -99,6 +107,13 @@ const styles = StyleSheet.create({
     textStyle: {
         color: '#000',
         fontSize: 14,
+        textAlign:'center',
     },
+    businessName:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        marginTop:10,
+    }
 });
 export default FilterPopWidows;

@@ -1,23 +1,27 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react';
+import ScrollableTabView, {DefaultTabBar,ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import {
-    Text,
-    ScrollView,
-    View,
-    ActivityIndicator,
-    TouchableHighlight,
+    AppRegistry,
     StyleSheet,
+    Text,
     Image,
     FlatList,
-    Alert
-} from 'react-native'
+    ActivityIndicator,
+    ScrollView,
+    TouchableOpacity,
+    View,
+} from 'react-native';
 import {Icon} from 'react-native-elements'
+import ImageShow from '../../component/ImageShow';
+let Dimensions = require('Dimensions');
+let ScreenWidth = Dimensions.get('window').width;
 
 
 class supplier_detail extends Component {
     // 初始化模拟数据
     constructor(props) {
         super(props);
-        // console.log ("99999999999："+this.props);
+
         this.state = {
             loading: false,
             data: [],
@@ -25,23 +29,27 @@ class supplier_detail extends Component {
             error: null,
             refreshing: false,
             showPop:false,
+            isActive:1,
+            imgUrl:'',
         }
     }
 
     componentDidMount() {
-        // alert("999:"+this.props.data);
         this.fetchData();
     }
 
     fetchData = () => {
         const {limit} = this.state;
         const { params } = this.props.navigation.state;
-        const url = 'http://localhost:8080/yywl-gyswl/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid;
+
+        const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid;
+        console.log('url -----',url)
         this.setState({loading: true});
+
         fetch(url)
             .then((response) => response.json())
             .then((response) => {
-
+            console.log('response -----',response)
                 this.setState({
                     data: response.data,
                     error: response.error || null,
@@ -64,30 +72,10 @@ class supplier_detail extends Component {
             />
         );
     };
-    renderFooter = () => {
-        if (!this.state.loading) return null;
-        return (
-            <View
-                style={{
-                    paddingVertical: 20,
-                    borderTopWidth: 1,
-                    borderColor: "#CED0CE"
-                }}
-            >
-                <ActivityIndicator animating size="large"/>
-            </View>
-        );
-    };
-
-    /*componentDidMount() {
-        ///const {navigate} = this.props.navigation;
-        // let data=navigation.state.params.data //key就是你自己设置的键
-    }*/
-
     renderLoadingView()
     {
         return (
-            <View style={styles.container}>
+            <View style={styles.containers}>
                 <Text>
                     正在加载数据......
                 </Text>
@@ -95,165 +83,430 @@ class supplier_detail extends Component {
         );
     }
 
-    renderView(data) {
-
+    noMoreData=()=>{
         return (
-            <ScrollView>
-                <View>
-                    <View>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <TouchableHighlight onPress={() => this.setState({isActive:1})}>
-                            <View style={[this.state.isActive==1? styles.active:null,styles.item]}>
-                                <Text style={styles.text1}>基本信息</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <View style={[this.state.isActive==1? {display:'flex'}:{display:'none'},styles.content]}>
-                            <Text style={{marginLeft:10,}}>{data.info.supplierName}</Text>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>{data.info.supplierName}</Text>
-                                <Text>{data.info.supplierName}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>{data.info.supplierName}</Text>
-                                <Text>{data.info.documentTypeCode}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>{data.info.registeredCapital}</Text>
-                                <Text>{data.info.documentTypeCode}</Text>
-                            </View>
-                            <View style={{marginLeft:10,}}><Text>{data.info.documentTypeCode}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>{data.info.documentTypeCode}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>{data.info.scopeOfBusiness}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>{data.info.documentTypeCode}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>{data.info.companyProfile}</Text></View>
-                        </View>
-                    </View>
-                    <View>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <TouchableHighlight onPress={() => this.setState({isActive:1})}>
-                            <View style={[this.state.isActive==1? styles.active:null,styles.item]}>
-                                <Text style={styles.text1}>通讯信息</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <View style={[this.state.isActive==1? {display:'flex'}:{display:'none'},styles.content]}>
-                            <Text style={{marginLeft:10,}}>所属地区:{data.cInfo.regionCode}</Text>
-                            <View style={{marginLeft:10,}}>
-                                <Text>邮政编码:{data.cInfo.postalCode}</Text>
-                            </View>
-                            <View style={{marginLeft:10,}}><Text>QQ号码:{data.cInfo.qqNumber}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>传真号码:{data.cInfo.fax}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>电子邮箱:{data.cInfo.mailBox}</Text></View>
-                            <View style={{marginLeft:10,}}><Text>详细地址:{data.cInfo.address}</Text></View>
-                        </View>
-                    </View>
-
-
-                    <View>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <TouchableHighlight onPress={() => this.setState({isActive:1})}>
-                            <View style={[this.state.isActive==1? styles.active:null,styles.item]}>
-                                <Text style={styles.text1}>备案公司资质证书</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        {data.file.map((itemc, i) =>
-                        <View style={[this.state.isActive==1? {display:'flex'}:{display:'none'},styles.content]}>
-                            <Text style={{marginLeft:10,}}>
-                                        <Text>{itemc.qualificationsInfoTypeName}</Text>
-
-                                </Text>
-                            <View style={{marginLeft:10,height:150,}}>
-                                <Image source={{uri: 'http://img1.jc001.cn/img/695/907695/1182566592775.jpg'}}
-                                       style={styles.img} />
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>有效期开始:{itemc.validityStartDate}</Text>
-                                <Text>有效期结束:{itemc.validityEndDate}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>审核意见:{itemc.shyj}</Text>
-                                <Text>状态:{itemc.shzt}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text>备注:{itemc.remarks}</Text>
-                            </View>
-                            <View
-                                style={{
-                                    height: 1,
-                                    width: "100%",
-                                    backgroundColor: "#cccccc",
-                                    marginTop:15,
-
-                                }}
-                            />
-                        </View>
-                        )
-                        }
-                    </View>
-
-                    <View>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <TouchableHighlight onPress={() => this.setState({isActive:1})}>
-                            <View style={[this.state.isActive==1? styles.active:null,styles.item]}>
-                                <Text style={styles.text1}>各级经营代理企业资质证书（含进口代理企业)</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        {data.file.map((itemc, i) =>
-                        <View style={[this.state.isActive==1? {display:'flex'}:{display:'none'},styles.content]}>
-                            <Text style={{marginLeft:10,}}>{itemc.qualificationsInfoTypeName}</Text>
-                            <View style={{marginLeft:10,height:150,}}>
-                                <Image source={{uri: 'http://img1.jc001.cn/img/695/907695/1182566592775.jpg'}}
-                                       style={styles.img} />
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>有效期开始:{itemc.validityStartDate}</Text>
-                                <Text>有效期结束:{itemc.validityEndDate}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text style={styles.text}>审核意见:{itemc.shyj}</Text>
-                                <Text>状态:{itemc.shzt}</Text>
-                            </View>
-                            <View style={styles.view}>
-                                <Text>备注:{itemc.remarks}</Text>
-                            </View>
-                            <View
-                                style={{
-                                    height: 1,
-                                    width: "100%",
-                                    backgroundColor: "#cccccc",
-                                    marginTop:15,
-
-                                }}
-                            />
-                        </View>
-
-                        )
-                        }
-                    </View>
-
-                    <View>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <TouchableHighlight onPress={() => this.setState({isActive:1})}>
-                            <View style={[this.state.isActive==1? styles.active:null,styles.item]}>
-                                <Text style={styles.text1}>审核</Text>
-                            </View>
-                        </TouchableHighlight>
-                        <View style={{height:0.5,backgroundColor:'#ccc'}}/>
-                        <View style={[this.state.isActive==1? {display:'flex'}:{display:'none'},styles.content]}>
-                            <Text style={{marginLeft:10,}}>审核状态：{data.info.shzt/*审核通过*/}</Text>
-                            <View style={{marginLeft:10,}}>
-                                <Text>审核意见:{data.info.shyj/*二级审核通过*/}</Text>
-                            </View>
-                        </View>
-                    </View>
-                </View>
-
-            </ScrollView>
+            <View style={{height:30,alignItems:'center',justifyContent:'flex-start',}}>
+                <Text style={{color:'#999999',fontSize:14,marginTop:5,marginBottom:5,}}>
+                    没有更多数据了
+                </Text>
+            </View>
         );
     }
+
+
+
+
+
+    renderView(){
+        let data = this.state.data || {}
+        let file = data.file || [];
+        let htFile = data.htFile || [];
+        let cInfo = data.cInfo || [];
+        let info = data.info || [];
+
+        return(
+            <View style={{flex:1}}>
+                <ScrollableTabView
+                    style={styles.container}
+                    renderTabBar={() => <DefaultTabBar />}
+                    tabBarUnderlineStyle={styles.lineStyle}
+                    tabBarActiveTextColor='#FDA313'>
+
+                    <View style={[styles.textStyle,]} tabLabel='基本信息'>
+                        {/*物资页面*/}
+                        <ScrollView style={{backgroundColor:'#fff'}}>
+                            <View style={{
+                                marginBottom: 8, flexDirection: 'column',marginTop:3,marginRight:10
+                            }}>
+                                <Text
+                                    style={{
+                                        fontSize: 16,
+                                        marginTop: 8,
+                                        color: '#000000',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 8,
+                                    }}>基本信息: </Text>
+                                <View style={{height:0.5,backgroundColor:'#ccc',width:500}}/>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    名称：{info.supplierName}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    规格：{info.registeredCapital || ""}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    型号：{info.managementModel || ""}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    证件类型：{info.documentTypeCode || ""}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    法人代表：{info.legalRepresentative}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    开户行：{info.openingBank || ""}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    开户账号：{info.bankAccountNumber || ""}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    注册资金：{info.registeredCapital || ""}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    主营产品：{info.mainProducts || ''}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    经营范围：{info.scopeOfBusiness || ''}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    经营模式：{info.managementModel || ''}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 10,
+                                    }}>
+                                    公司简介：{info.companyProfile || ''}
+                                </Text>
+
+                                <View style={{backgroundColor:"#ccc",height:5,width:500}}></View>
+                                <Text
+                                    style={{
+                                        fontSize: 16,
+                                        marginTop: 8,
+                                        color: '#000000',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 8,
+                                    }}>通讯信息: </Text>
+                                <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        width: 360,
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>所属地区:{cInfo.address || ''} </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    邮政编码：{cInfo.postalCode || ''}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    QQ号码：{cInfo.qqNumber || ''}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    传真号码：{cInfo.fax || ''}
+                                </Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    电子邮箱：{cInfo.mailBox || ''}
+                                </Text>
+
+                                <Text
+                                    style={{
+                                        fontSize: 14,
+                                        marginTop: 5,
+                                        color: '#666666',
+                                        marginLeft: 15,
+                                        marginRight: 25,
+                                        marginBottom: 5,
+                                    }}>
+                                    详细地址：{cInfo.address || ''}
+                                </Text>
+
+                            </View>
+                        </ScrollView>
+                    </View>
+
+                    <View style={styles.textStyle} tabLabel='资质证书'>
+                        {/*工具页面*/}
+                        <ScrollView style={{backgroundColor:"#FFF"}}>
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                    marginTop: 8,
+                                    color: '#000000',
+                                    marginLeft: 15,
+                                    marginRight: 25,
+                                    marginBottom: 8,
+                                }}>备案公司资质证书: </Text>
+                            <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
+
+                            {data.file.map((itemc, i) =>{
+                                if(itemc.qualificationsInfoTypeCode!="113" && itemc.qualificationsInfoTypeCode!="114"
+                                && itemc.qualificationsInfoTypeCode!="115" && itemc.qualificationsInfoTypeCode!="116"
+                                && itemc.qualificationsInfoTypeCode!="118")
+                                    console.log('图片地址： -----',global.config.urlimg + itemc.imgs)
+                                    return (
+                                <View >
+                                    <Text style={{marginLeft: 10, marginTop: 10}}>{itemc.qualificationsInfoTypeName}</Text>
+                                    <View style={{marginLeft: 10, height: 150,}}>
+                                        <TouchableOpacity onPress={()=>{
+                                            this.setState({
+                                                imgUrl:itemc.imgs,
+                                            })
+                                            this.imageShow&&this.imageShow.isOpenModel();
+                                        }}>
+                                            <Image source={{uri: global.config.urlimg+itemc.imgs[0]}}
+                                                   style={styles.img} />
+                                        </TouchableOpacity>
+
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text style={{flex: 1}}>有效期开始:{itemc.validityStartDate}</Text>
+                                        <Text style={{flex: 1}}>有效期结束:{itemc.validityEndDate}</Text>
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text style={{flex: 1}}>审核意见:{itemc.shyj}</Text>
+                                        <Text style={{flex: 1}}>状态:{itemc.shzt}</Text>
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text>备注:{itemc.remarks}</Text>
+                                    </View>
+                                    <View
+                                        style={{
+                                            height: 1,
+                                            width: "100%",
+                                            backgroundColor: "#cccccc",
+                                            marginTop: 15,
+
+                                        }}
+                                    />
+                                </View>
+                                    )
+
+
+                            })
+
+                            }
+
+                            <View style={{backgroundColor:"#ccc",height:10,width:500}}></View>
+
+                            <Text
+                                style={{
+                                    fontSize: 16,
+                                    marginTop: 8,
+                                    color: '#000000',
+                                    marginLeft: 15,
+                                    marginRight: 25,
+                                    marginBottom: 8,
+                                }}>各级经营代理企业资格证书: </Text>
+                            <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
+                            {data.htFile.map((itemc, i) =>{
+
+                                if(itemc.qualificationsInfoTypeCode=="113" || itemc.qualificationsInfoTypeCode=="114"
+                                    || itemc.qualificationsInfoTypeCode=="115" || itemc.qualificationsInfoTypeCode=="116"
+                                    || itemc.qualificationsInfoTypeCode=="118")
+
+                                    return (
+                                <View >
+                                    <Text style={{marginLeft:10,marginTop:10}}>{itemc.qualificationsInfoTypeName}</Text>
+                                    <View style={{marginLeft:10,height:150,}}>
+                                        <TouchableOpacity onPress={()=>{
+                                            this.setState({
+                                                imgUrl:itemc.imgs,
+                                            })
+                                            this.imageShow&&this.imageShow.isOpenModel();
+                                        }}>
+                                            <Image source={{uri: global.config.urlimg+itemc.imgs[0]}}
+                                                   style={styles.img} />
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text style={{flex:1}}>有效期开始:{itemc.validityStartDate}</Text>
+                                        <Text style={{flex:1}}>有效期结束:{itemc.validityEndDate}</Text>
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text style={{flex:1}}>审核意见:{itemc.shyj}</Text>
+                                        <Text style={{flex:1}}>状态:{itemc.shzt}</Text>
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text>备注:{itemc.remarks}</Text>
+                                    </View>
+                                    <View
+                                        style={{
+                                            height: 1,
+                                            width: "100%",
+                                            backgroundColor: "#cccccc",
+                                            marginTop:15,
+
+                                        }}
+                                    />
+                                </View>
+                                    )
+
+                                }
+                            )
+                            }
+                        </ScrollView>
+                    </View>
+
+
+                    <View style={styles.textStyle} tabLabel='审核状态'>
+                        {/*工具页面*/}
+                        <View style={{backgroundColor:"#FFF",height:150}}>
+                            <View style={{height:75, flexDirection: 'row',marginLeft:10}}>
+                                <Icon
+                                    name='g-translate'
+                                    color='#FDA313'
+                                    size={40}
+                                />
+                            <Text style={{marginLeft:10,marginTop:30,}}>审核状态：{info.shztName || ''}</Text>
+                            </View>
+                            <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
+
+                            <View style={{height:75, flexDirection: 'row',marginLeft:10}}>
+                                <Icon
+                                    name='map'
+                                    color='#FDA313'
+                                    size={40}
+                                />
+                                <Text style={{marginLeft:10,marginTop:30}}>审核意见：{info.shyj || ''}</Text>
+                            </View>
+                        </View>
+                    </View>
+                </ScrollableTabView>
+                {this.state.imgUrl.length !== 0 && <ImageShow ref = {(e) => this.imageShow = e}
+                                                              imgUrl = {this.state.imgUrl}/>}
+                {/*<ImageMagify ref={(e)=>this.ImgMagify = e} imgUrl = {this.state.imgUrl}/>*/}
+            </View>
+
+        )
+    }
+
 
     render() {
         //const { params } = this.props.navigation.state;
@@ -262,61 +515,44 @@ class supplier_detail extends Component {
         if (!this.state.data.info) {
             return this.renderLoadingView();
         }
-        var info = this.state.data;
-        return this.renderView(info);
+        return this.renderView();
 
     }
 }
 const styles = StyleSheet.create({
-    active:{
-        backgroundColor:'#41C7DB',
-        color:"#000",
+    container: {
+        flex: 1,
+        marginTop: 5,
     },
-    container:{
-        flex:1,flexDirection:'row',justifyContent:'center',alignItems:'center',backgroundColor:'#F5FCFF',borderBottomColor:"#000",
-        borderBottomWidth:1,borderStyle:'solid',
+    lineStyle: {
+        width:ScreenWidth/3,
+        height: 2,
+        backgroundColor: '#FDA313',
     },
-    item:{
-        /*borderColor:'#ccc',
-        borderStyle:'solid',
-        borderWidth:0.5,//改了边框的宽度0.5改为1*/
-        padding:5
+    textStyle: {
+        flex: 1,
     },
-    content:{
-        padding:10,
-        backgroundColor:'#FFF'
-    },
-    rootview:{
-        //flexDirection: 'row',
-        //height: 50,
-        backgroundColor: '#FFF',
-    },
-
     view:{
         flexDirection: 'row',
         marginLeft:10,
-        padding:2
+        padding:2,
+        marginTop:10
     },
     text:{
-        marginRight:30,
-    },
-    text1:{
-        fontSize:15,
-        color:"#111",
-        marginLeft:5,
-        fontWeight:"100"
-        /*borderColor:'#000000',
-        borderStyle:'solid',
-        borderWidth:1,*/
+        marginRight:40,
     },
     img:{
         maxWidth: 200,
         height: 130,
-        textAlign:'center',
         justifyContent: 'center',
         marginLeft:100,
         marginRight:100,
         marginTop:10,
+    },
+
+    containers:{
+        flex:1,flexDirection:'row',justifyContent:'center',alignItems:'center',backgroundColor:'#F5FCFF',borderBottomColor:"#000",
+        borderBottomWidth:1,borderStyle:'solid',
     },
 
 });

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/res/merged/release/xml/preferences.xml",
+        "source": "/Users/yujingkun/.android/build-cache/b1a79a5a7e1eebf413f1285592932624a492f687/output/res/xml/preferences.xml"
+    },
+    {
+        "merged": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/res/merged/release/xml/provider_paths.xml",
+        "source": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/node_modules/react-native-image-picker/android/build/intermediates/bundles/default/res/xml/provider_paths.xml"
+    }
+]

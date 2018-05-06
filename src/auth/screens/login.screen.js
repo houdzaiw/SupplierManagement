@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry,
     StyleSheet,
     TouchableHighlight,
+    TouchableOpacity,
     Text,
     Image,
     View,
@@ -19,6 +20,28 @@ class loginscreen extends Component {
         }
 
     }
+
+    _toForget= () => {
+        const {navigate} = this.props.navigation;
+        if (navigate) {
+            navigate('forget');
+        }
+
+    };
+
+    // componentWillMount(){
+    //     let toke = nil;
+    //     if (toke.length !== 0){
+    //         const {navigate} = this.props.navigation;
+    //         if (navigate) {
+    //             navigate('Supplier');
+    //         }
+    //     }else {
+    //
+    //     }
+    //
+    // }
+
     loginInMainpage=function(){
         if(!this.state.username){
             Alert.alert('信息提示','用户名必须输入');
@@ -30,9 +53,9 @@ class loginscreen extends Component {
         }
         let url = global.config.url+'/userAPI/login';
 
-        // let formData = new FormData();
-        // formData.append("loginName",this.state.username);
-        // formData.append("pwd",this.state.userpwd);
+         //let formData = new FormData();
+         //formData.append("loginName",this.state.username);
+         //formData.append("pwd",this.state.userpwd);
         let params={
             loginName: this.state.username,
             pwd:this.state.userpwd
@@ -49,21 +72,35 @@ class loginscreen extends Component {
         }
         fetch(url, {
             method: 'POST',
-            headers: {
-               // 'Content-Type': 'application/x-www-form-urlencoded',
-               // 'Accept': 'application/json',
-                //'Content-Type': 'application/json',
-            },
-            //body: formData
+            // headers: {
+            //     'Accept' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;',
+            //     'Content-Type' : 'text/plain;charset=UTF-8',
+            //     'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36',
+            //     'Host' : 'domain.xx.com',
+            // },
+           //body: JSON.stringify(formData)
         }) .then((response) => response.json())
             .then((result) => {
                 if(result.doResult==1){
-                     let user=JSON.parse(result.message);
-                    global.config.user=user;
-                    const {navigate} = this.props.navigation;
-                    if (navigate) {
-                        navigate('Home');
-                    }
+                    let user=JSON.parse(result.message);
+                     if(user.yhlx=='2'){
+                         console.log('user ------',user)
+                         global.config.user=user;
+                         if(typeof(global.config.user.yyid)=="undefined"){
+                             global.config.user.yyid='';
+                         }
+                         if(typeof(global.config.user.yhlx)=="undefined"){
+                             global.config.user.yhlx='';
+                         }
+                         const {navigate} = this.props.navigation;
+                         if (navigate) {
+                             navigate('Supplier');
+                         }
+                     }else{
+                         Alert.alert('登录失败',result.message);
+                     }
+
+
                 }else{
                     Alert.alert('登录失败',result.message);
                 }
@@ -99,6 +136,7 @@ class loginscreen extends Component {
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
                         style={styles.input}
+                        //autoCapitalize = 'none'
                         onChangeText={(input) => this.setState({username: input})}
                     />
                 </View>
@@ -118,7 +156,8 @@ class loginscreen extends Component {
                                     underlayColor='#0078FF'
                                     onPress={()=>this.loginInMainpage()}><Text
                     style={styles.loginText}>登录</Text></TouchableHighlight>
-                <View style={styles.view}><Text style={styles.text}>记住密码</Text><Text style={styles.text}>忘记密码？</Text></View>
+                <View style={styles.view}><Text style={styles.text}>记住密码</Text>
+                    <TouchableOpacity onPress={this._toForget}><Text style={styles.text}>忘记密码？</Text></TouchableOpacity></View>
             </View>)
     }
 }
