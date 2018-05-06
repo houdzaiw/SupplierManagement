@@ -19,7 +19,6 @@ import TopBanner from '../../component/TopBanner'
 const {width, height} = Dimensions.get('window')
 import FilterPopWidows from '../../component/FilterPopWidows'
 
-
 class supplierlistscreen extends Component {
 
     static navigationOptions = {
@@ -54,10 +53,11 @@ class supplierlistscreen extends Component {
 
         }
         this.refreshing = true;
-        // let url = `${api}?name=&pageNo=${start}&size=${count}&yyid=${global.config.user.yyid}`
+        // let url = `${api}?name=&pageNo=${start}&size=${count}&yyid=${userData.yyid}`
         //let url = `http://localhost:8080/yywl-gyswl/mobile/listGys?name=${name}&pageNo=${pageNo}&size=${pageSize}&yyid=53010301`
         //let url = 'http://localhost:8080/yywl-gyswl/mobile/listGys?name=&pageNo=1&size=10&yyid=53010301'
-        //let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx='+global.config.user.yhlx
+        //let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+userData.yyid+'&userId='+userData.id+'&userLx='+userData.yhlx
+
         let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=2'
         console.log('url ------',url)
         return fetch(url)

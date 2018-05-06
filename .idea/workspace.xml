@@ -20,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="supplierlistscreen.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="supplierlistscreen.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/supplier/screens/supplierlistscreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="364">
+              <caret line="60" column="63" lean-forward="true" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
               <folding>
                 <element signature="n#!!block;n#renderRow#0;n#supplierlistscreen#0" expanded="false" />
               </folding>
@@ -32,35 +32,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.screen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/auth/screens/login.screen.js">
+      <file leaf-file-name="agenda.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/order/screens/agenda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3344">
-              <caret line="186" column="30" lean-forward="false" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="passwordscreen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/screens/passwordscreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="42" column="15" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="42" selection-end-column="15" />
+            <state relative-caret-position="285">
+              <caret line="96" column="89" lean-forward="false" selection-start-line="96" selection-start-column="71" selection-end-line="96" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nicknamescreen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/screens/nicknamescreen.js">
+      <file leaf-file-name="login.screen.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/auth/screens/login.screen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+            <state relative-caret-position="417">
+              <caret line="120" column="63" lean-forward="true" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,19 +57,31 @@
       <file leaf-file-name="userscreen.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/user/screens/userscreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="741">
-              <caret line="50" column="125" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="125" />
+            <state relative-caret-position="1170">
+              <caret line="92" column="43" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.screen.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/user/screens/user.screen.js">
+      <file leaf-file-name="Global.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/auth/screens/Global.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1444">
-              <caret line="85" column="125" lean-forward="false" selection-start-line="85" selection-start-column="125" selection-end-line="85" selection-end-column="125" />
+            <state relative-caret-position="323">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StorageUtil.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/auth/screens/StorageUtil.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,11 +89,12 @@
       <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6251">
-              <caret line="370" column="0" lean-forward="true" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
+            <state relative-caret-position="291">
+              <caret line="382" column="14" lean-forward="true" selection-start-line="381" selection-start-column="14" selection-end-line="382" selection-end-column="14" />
               <folding>
                 <element signature="e#89#115#0" expanded="true" />
-                <element signature="e#1777#1825#0" expanded="true" />
+                <element signature="e#217#270#0" expanded="true" />
+                <element signature="e#1874#1922#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,21 +103,9 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="0">
+              <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forgetpassword.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/user/screens/forgetpassword.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,23 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showdate</find>
-      <find>Company</find>
-      <find>this.timer</find>
-      <find>react-navigation</find>
-      <find>FlatList</find>
-      <find>JSON.Parse</find>
-      <find>this.todayTime</find>
-      <find>loadItems</find>
-      <find>day</find>
-      <find>renderItem</find>
-      <find>fetchNetwork</find>
-      <find>formatDate</find>
-      <find>selectDay</find>
-      <find>component</find>
-      <find>fetch</find>
-      <find>nil</find>
-      <find>resolv</find>
       <find>Toa</find>
       <find>login</find>
       <find>password</find>
@@ -163,6 +135,23 @@
       <find>this.refreshing =</find>
       <find>noMoreData</find>
       <find>loginInMainpage</find>
+      <find>xport default</find>
+      <find>我的</find>
+      <find>export</find>
+      <find>config.user</find>
+      <find>render</find>
+      <find>gloa</find>
+      <find>loginState</find>
+      <find>user --xxx--</find>
+      <find>'userData'</find>
+      <find>userData ---xxxx--</find>
+      <find>userName</find>
+      <find>global.user.loginState</find>
+      <find>userData</find>
+      <find>userInfo</find>
+      <find>global.config.user</find>
+      <find>loginName</find>
+      <find>global.config</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -170,6 +159,8 @@
       <replace>openModal</replace>
       <replace>size</replace>
       <replace>listData</replace>
+      <replace>SimpleApp</replace>
+      <replace>userData</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\app\SupplierManagement\android</dir>
@@ -186,7 +177,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/user/screens/tanchu.js" />
         <option value="$PROJECT_DIR$/src/config/styles_config.js" />
         <option value="$PROJECT_DIR$/ios/SupplierManagement/AppDelegate.m" />
         <option value="$PROJECT_DIR$/src/product/screens/index.js" />
@@ -225,18 +215,19 @@
         <option value="$PROJECT_DIR$/src/product/screens/productsListScreen.js" />
         <option value="$PROJECT_DIR$/src/product/screens/product-detail.screen.js" />
         <option value="$PROJECT_DIR$/src/supplier/screens/supplier-detail.js" />
-        <option value="$PROJECT_DIR$/src/order/screens/agenda.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/supplier/screens/supplierlistscreen.js" />
         <option value="$PROJECT_DIR$/src/order/screens/goods.screen.js" />
         <option value="$PROJECT_DIR$/src/user/screens/passwordscreen.js" />
         <option value="$PROJECT_DIR$/src/user/screens/nicknamescreen.js" />
         <option value="$PROJECT_DIR$/index.js" />
-        <option value="$PROJECT_DIR$/src/auth/screens/login.screen.js" />
-        <option value="$PROJECT_DIR$/App.js" />
-        <option value="$PROJECT_DIR$/src/user/screens/userscreen.js" />
         <option value="$PROJECT_DIR$/src/user/screens/user.screen.js" />
         <option value="$PROJECT_DIR$/src/user/screens/forgetpassword.js" />
+        <option value="$PROJECT_DIR$/App.js" />
+        <option value="$PROJECT_DIR$/src/auth/screens/login.screen.js" />
+        <option value="$PROJECT_DIR$/src/user/screens/userscreen.js" />
+        <option value="$PROJECT_DIR$/src/order/screens/agenda.js" />
+        <option value="$PROJECT_DIR$/src/auth/screens/Global.js" />
+        <option value="$PROJECT_DIR$/src/supplier/screens/supplierlistscreen.js" />
       </list>
     </option>
   </component>
@@ -260,8 +251,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="260" />
-    <option name="y" value="78" />
+    <option name="x" value="120" />
+    <option name="y" value="226" />
     <option name="width" value="1556" />
     <option name="height" value="914" />
   </component>
@@ -280,6 +271,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -292,6 +284,19 @@
               <item name="SupplierManagement" type="b2602c69:ProjectViewProjectNode" />
               <item name="SupplierManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupplierManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupplierManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SupplierManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SupplierManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="screens" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SupplierManagement" type="b2602c69:ProjectViewProjectNode" />
@@ -323,7 +328,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -333,7 +337,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="SearchEverywhereHistoryKey" value="login&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/auth/screens/login.screen.js&#10;supp&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/supplier/screens/supplierlistscreen.js&#10;user&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/user/screens/userscreen.js&#10;age&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/order/screens/agenda.js&#10;app&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/App.js&#10;order&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/order/screens/order-list.js&#10;Virt&#9;null&#9;null&#10;cal&#9;null&#9;null&#10;loginscr&#9;null&#9;null&#10;c&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/company/screens/companysListScreen.js&#10;containe&#9;null&#9;null&#10;product_detail&#9;null&#9;null&#10;search&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/search/screens/search.screen.js&#10;supplierName&#9;null&#9;null&#10;Virtualized&#9;null&#9;null&#10;orderlist&#9;null&#9;null&#10;orderli&#9;null&#9;null&#10;cache.xml&#9;FILE&#9;file://D:/app/SupplierManagement/android/build/intermediates/dex-cache/cache.xml" />
+    <property name="SearchEverywhereHistoryKey" value="agen&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/order/screens/agenda.js&#10;login&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/auth/screens/login.screen.js&#10;supp&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/supplier/screens/supplierlistscreen.js&#10;user&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/user/screens/userscreen.js&#10;age&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/order/screens/agenda.js&#10;app&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/App.js&#10;order&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/order/screens/order-list.js&#10;Virt&#9;null&#9;null&#10;cal&#9;null&#9;null&#10;loginscr&#9;null&#9;null&#10;c&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/company/screens/companysListScreen.js&#10;containe&#9;null&#9;null&#10;product_detail&#9;null&#9;null&#10;search&#9;FILE&#9;file:///Users/yujingkun/Desktop/MyProject/SupplierManagement/src/search/screens/search.screen.js&#10;supplierName&#9;null&#9;null&#10;Virtualized&#9;null&#9;null&#10;orderlist&#9;null&#9;null&#10;orderli&#9;null&#9;null&#10;cache.xml&#9;FILE&#9;file://D:/app/SupplierManagement/android/build/intermediates/dex-cache/cache.xml" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -779,7 +783,9 @@
       <workItem from="1525227627782" duration="11722000" />
       <workItem from="1525256474623" duration="353000" />
       <workItem from="1525312713536" duration="10616000" />
-      <workItem from="1525583677983" duration="544000" />
+      <workItem from="1525583677983" duration="3911000" />
+      <workItem from="1525607759898" duration="3615000" />
+      <workItem from="1525612616238" duration="4009000" />
     </task>
     <task id="LOCAL-00001" summary="第三次提交">
       <created>1511405190338</created>
@@ -841,22 +847,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1335703000" />
+    <option name="totallyTimeSpent" value="1346694000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="260" y="78" width="1556" height="914" extended-state="0" />
+    <frame x="120" y="226" width="1556" height="914" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12907432" sideWeight="0.5958486" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23142113" sideWeight="0.5836386" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09771987" sideWeight="0.4625922" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.116178066" sideWeight="0.4889357" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12907432" sideWeight="0.4041514" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.057387058" sideWeight="0.49789253" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23142113" sideWeight="0.41636142" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.116178066" sideWeight="0.4889357" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2496" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2881563" sideWeight="0.5374078" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.016286645" sideWeight="0.49789253" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -868,7 +875,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983165" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.058563534" sideWeight="0.49789253" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -922,67 +928,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-plugin-transform-regenerator/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-plugin-transform-strict-mode/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-es2015-node/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-fbjs/configure.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-fbjs/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-jest/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-preset-react-native/configs/hmr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="3" lean-forward="true" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/babel-register/lib/browser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/babel-register/lib/node.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1151,13 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/order/screens/agenda.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="96" column="16" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-native-toast/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1223,59 +1166,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/supplier/screens/supplierlistscreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="n#!!block;n#renderRow#0;n#supplierlistscreen#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/auth/screens/login.screen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3344">
-          <caret line="186" column="30" lean-forward="false" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6251">
-          <caret line="370" column="0" lean-forward="true" selection-start-line="370" selection-start-column="0" selection-end-line="370" selection-end-column="0" />
-          <folding>
-            <element signature="e#89#115#0" expanded="true" />
-            <element signature="e#1777#1825#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/user/screens/nicknamescreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="35" column="19" lean-forward="true" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <caret line="35" column="19" lean-forward="false" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/screens/userscreen.js">
+    <entry file="file://$PROJECT_DIR$/src/user/screens/forgetpassword.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="741">
-          <caret line="50" column="125" lean-forward="true" selection-start-line="50" selection-start-column="95" selection-end-line="50" selection-end-column="125" />
+        <state relative-caret-position="154">
+          <caret line="70" column="40" lean-forward="false" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/screens/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/screens/passwordscreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="42" column="15" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="42" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -1288,20 +1209,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/screens/passwordscreen.js">
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/Me.js" />
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/index.js" />
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/Login.js" />
+    <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="42" column="15" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="42" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="0" column="43" lean-forward="true" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/user/screens/forgetpassword.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="70" column="40" lean-forward="true" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
+        <state relative-caret-position="264">
+          <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/StorageUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="27" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="382" column="14" lean-forward="true" selection-start-line="381" selection-start-column="14" selection-end-line="382" selection-end-column="14" />
+          <folding>
+            <element signature="e#89#115#0" expanded="true" />
+            <element signature="e#217#270#0" expanded="true" />
+            <element signature="e#1874#1922#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-native/local-cli/core/__tests__/ios/findPodspecName.spec.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/login.screen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="120" column="63" lean-forward="true" selection-start-line="120" selection-start-column="63" selection-end-line="120" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/user/screens/userscreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1170">
+          <caret line="92" column="43" lean-forward="false" selection-start-line="92" selection-start-column="43" selection-end-line="92" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/order/screens/agenda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="96" column="89" lean-forward="false" selection-start-line="96" selection-start-column="71" selection-end-line="96" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/auth/screens/Global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/supplier/screens/supplierlistscreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="60" column="63" lean-forward="true" selection-start-line="60" selection-start-column="63" selection-end-line="60" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!block;n#renderRow#0;n#supplierlistscreen#0" expanded="false" />
           </folding>
         </state>
       </provider>

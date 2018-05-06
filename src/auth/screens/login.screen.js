@@ -84,18 +84,8 @@ class loginscreen extends Component {
                 if(result.doResult==1){
                     let user=JSON.parse(result.message);
                      if(user.yhlx=='2'){
-                         console.log('user ------',user)
-                         global.config.user=user;
-                         if(typeof(global.config.user.yyid)=="undefined"){
-                             global.config.user.yyid='';
-                         }
-                         if(typeof(global.config.user.yhlx)=="undefined"){
-                             global.config.user.yhlx='';
-                         }
-                         const {navigate} = this.props.navigation;
-                         if (navigate) {
-                             navigate('Supplier');
-                         }
+                         this.loginSuccess(user);
+
                      }else{
                          Alert.alert('登录失败',result.message);
                      }
@@ -108,6 +98,28 @@ class loginscreen extends Component {
             .catch((error) => {
                 console.error(error);
             });
+
+    }
+    loginSuccess(user){//登录函数
+        // debugger;
+        // 使用key来保存数据。这些数据一般是全局独有的，常常需要调用的。
+        // 除非你手动移除，这些数据会被永久保存，而且默认不会过期。
+        console.log("user ----",user);
+        storage.save({
+            key: 'loginState',  // 注意:请不要在key中使用_下划线符号!
+            data: user,
+
+            // 如果不指定过期时间，则会使用defaultExpires参数
+            // 如果设为null，则永不过期
+            // 8个小时后过期
+            expires: 1000 * 3600 * 8
+        });
+        global.user.loginState = true;//设置登录状态
+        global.user.userData = user;//保存用户数据
+
+        setTimeout(()=>{
+            this.props.navigation.navigate('Supplier')//跳转到用户页面
+        },2000)
 
     }
     render() {

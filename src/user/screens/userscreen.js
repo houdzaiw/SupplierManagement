@@ -15,7 +15,9 @@ import {Icon} from 'react-native-elements';
 class userscreen extends Component {
     constructor(props){
         super(props)
-
+        this.state = {
+            userInfo:{},
+        }
     }
     static navigationOptions = {
         title: '我的',
@@ -23,7 +25,37 @@ class userscreen extends Component {
         headerStyle:{backgroundColor:'#ccc',},
         headerLeft:<View/>,
     };
-
+    componentWillMount(){
+        this._loadUserInfo();
+    }
+    _loadUserInfo(){
+        storage.load({
+            key: 'loginState',
+            // autoSync(默认为true)意味着在没有找到数据或数据过期时自动调用相应的sync方法
+            autoSync: true,
+            // syncInBackground(默认为true)意味着如果数据过期，
+            // 在调用sync方法的同时先返回已经过期的数据。
+            // 设置为false的话，则始终强制返回sync方法提供的最新数据(当然会需要更多等待时间)。
+            syncInBackground: true,
+        }).then(ret => {
+            this.setState({
+                userInfo:ret,
+            });
+            console.log('ret -----',ret);
+        }).catch(err => {
+            //如果没有找到数据且没有sync方法，
+            //或者有其他异常，则在catch中返回
+            console.warn(err.message);
+            switch (err.name) {
+                case 'NotFoundError':
+                    // TODO;
+                    break;
+                case 'ExpiredError':
+                    // TODO
+                    break;
+            }
+        });
+    }
     _toUpdatePassword = () => {
         const {navigate} = this.props.navigation;
         if (navigate) {
@@ -41,6 +73,10 @@ class userscreen extends Component {
 
 
    render(){
+       let user = this.state.userInfo || {};
+       let loginName = user.loginName || '';
+       console.log('user ----',user);
+       console.log('loginName ----',loginName);
         return(
             <View style={styles.AA}>
                 <View>
@@ -48,7 +84,9 @@ class userscreen extends Component {
                         borderStyle:'solid',marginTop:10,height:80,backgroundColor:"#fff",marginBottom:10,
                         borderWidth:1,}}>
                         <Image style={{width:50,height:50,marginLeft:10,marginTop:13,marginRight:10,}} source={{uri: 'http://www.qqw21.com/article/uploadpic/2012-9/201291893228996.jpg'}}/>
-                        <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}>你好，{global.config.user.loginName}</Text>
+                        {loginName.length !==0 && <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}>你好,{loginName || ''}</Text>}
+                        {loginName.length ===0  && <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}>请登录</Text>}
+
 
                     </View>
                     <TouchableOpacity activeOpacity={1} onPress={this._toUpdateInfo }>

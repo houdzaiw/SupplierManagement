@@ -12,6 +12,9 @@ import {
     Text,
     TextInput,
 } from 'react-native';
+//全局存储
+import stroage from './src/auth/screens/StorageUtil';
+import './src/auth/screens/Global';
 import {Icon} from "react-native-elements"
 import styleConfig from './src/config/styles_config';
 import {StackNavigator, TabNavigator } from "react-navigation";
@@ -97,6 +100,7 @@ const MainScreenNavigator = TabNavigator({
         }
     },
 },{
+    initialRouteName:'User',
     animationEnabled: false, // 切换页面时是否有动画效果
     tabBarPosition: 'bottom', // 显示在底端，android 默认是显示在页面顶端的
     swipeEnabled: false, // 是否可以左右滑动切换tab
@@ -120,19 +124,19 @@ const MainScreenNavigator = TabNavigator({
 })
 
 const SimpleApp = StackNavigator({
-    login: { screen: login,
-        navigationOptions: {
-            headerTitle: '登录',
-            headerTitleStyle: {
-                fontSize: 14,
-                color: '#F9F9FA',
-            },
-            headerStyle: {
-                height: 50,
-                /*marginBottom: 15,*/
-                backgroundColor: '#CCCCCC',
-            },
-        }},
+    // login: { screen: login,
+    //     navigationOptions: {
+    //         headerTitle: '登录',
+    //         headerTitleStyle: {
+    //             fontSize: 14,
+    //             color: '#F9F9FA',
+    //         },
+    //         headerStyle: {
+    //             height: 50,
+    //             /*marginBottom: 15,*/
+    //             backgroundColor: '#CCCCCC',
+    //         },
+    //     }},
     Home:{
         screen:MainScreenNavigator,
     },
@@ -368,15 +372,29 @@ const SimpleApp = StackNavigator({
                 backgroundColor: '#CCCCCC',
             },
         }},
-
-
-
-
-
-
 });
 
 
+const defaultGetStateForAction = SimpleApp.router.getStateForAction;
+
+SimpleApp.router.getStateForAction = (action, state) => {
+    //页面是MeScreen并且 global.user.loginState = false || ''（未登录）
+    // console.log("loginState ---xxxx--",global.user.loginState);
+    // console.log("userData ---xxxx--",global.user.userData);
+    // let loginName = user.loginName || '';
+    if ((action.routeName ==='Product' || action.routeName ==='Supplier' || action.routeName ==='Agenda') && !global.user.loginState) {
+        this.routes = [
+            ...state.routes,
+            {key: 'id-'+Date.now(), routeName: 'login', params: { name: 'name1'}},
+        ];
+        return {
+            ...state,
+            routes,
+            index: this.routes.length - 1,
+        };
+    }
+    return defaultGetStateForAction(action, state);
+};
 
 export default SimpleApp;
 // AppRegistry.registerComponent('SimpleApp', () => SimpleApp);
