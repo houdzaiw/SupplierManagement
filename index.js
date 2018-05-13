@@ -8,6 +8,6 @@ global.config = {
     //url:'http://192.168.1.245:8080/yywl-gyswl',
     urlimg:'http://localhost:8080/img/',
     //url:'http://192.254.1.9:1688/yywl-gyswl',
-    //url:'http://192.168.1.9:1688/yywl-gyswl',
+    //url:'http://192.168.1.100:1688/yywl-gyswl',
 };
 AppRegistry.registerComponent('SupplierManagement', () => App);

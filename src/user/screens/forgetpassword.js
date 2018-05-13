@@ -19,8 +19,6 @@ class forgetpassword extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            newPwd:'',
-            nick:'',
 
         }
     }
@@ -31,8 +29,21 @@ class forgetpassword extends Component {
         headerStyle: {backgroundColor: '#ccc',}
     };
     forget() {
+
         let userInfo = global.config.user || [];
-            let url = global.config.url + '/mobile/retrievePassword?password=' + this.state.newPwd + '&loginName=' + this.state.nick + '&phoneNumber=' + userInfo.phoneNumber;
+        console.log('userInfo ----',userInfo);
+
+        if(!this.userInfo.phoneNumber.length){
+            return alert('请输入旧密码')
+        }else if(!this.state.newPwd.length){
+            return alert('请输入新密码')
+        }else if(!this.state.confirmPwd.length){
+            return alert('请输入确认密码')
+        }else if(this.state.newPwd !== this.state.confirmPwd) {
+            return alert('输入的新密码不一致')
+        }else {
+
+            let url = global.config.url + '/mobile/retrievePassword?password=' + this.state.newPwd + '&loginName=' + this.state.confirmPwd + '&phoneNumber=' + userInfo.phoneNumber;
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -54,12 +65,13 @@ class forgetpassword extends Component {
             });
 
         }
+    }
 
 
     render(){
         return(
             <View>
-            <View style={styles.items}>
+            <View style={styles.item}>
                 <View style={{width:10}}></View>
                 <TextInput
                     ref="inputLoginName"
@@ -72,12 +84,8 @@ class forgetpassword extends Component {
                     //autoCapitalize = 'none'
                     onChangeText={(input) => this.setState({username: input})}
                 />
-                <TouchableOpacity>
-                <View style={{width:90,height:50,backgroundColor:'#fff',marginLeft:140}}>
-                    <Text style={{marginTop:20,marginLeft:10}}>获取验证码</Text>
-                </View>
-                </TouchableOpacity>
             </View>
+
 
                 <View style={styles.item}>
                     <View style={{width:10}}></View>
@@ -85,7 +93,7 @@ class forgetpassword extends Component {
                         ref="inputLoginName"
                         //autoFocus={true}
                         underlineColorAndroid="transparent"
-                        placeholder="请输入验证码"
+                        placeholder="请输入新密码"
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
                         style={styles.input}
@@ -100,7 +108,7 @@ class forgetpassword extends Component {
                         ref="inputLoginName"
                         //autoFocus={true}
                         underlineColorAndroid="transparent"
-                        placeholder="请输入新密码"
+                        placeholder="请确认输入新密码"
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
                         style={styles.input}

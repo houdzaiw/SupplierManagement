@@ -10,7 +10,7 @@ storage.load({
     global.user.loginState = true;
     global.user.userData = ret;
     global.config.user = ret;
-}).catch(err => {
+}).catch(error => {
     global.user.loginState = false;
     global.user.userData = '';
 })
