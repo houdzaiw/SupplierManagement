@@ -85,7 +85,12 @@ class userscreen extends Component {
                         borderWidth:1,}}>
                         <Image style={{width:50,height:50,marginLeft:10,marginTop:13,marginRight:10,}} source={{uri: 'http://www.qqw21.com/article/uploadpic/2012-9/201291893228996.jpg'}}/>
                         {loginName.length !==0 && <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}>你好,{loginName || ''}</Text>}
-                        {loginName.length ===0  && <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}>请登录</Text>}
+                        {loginName.length ===0  && <Text style={{marginLeft:10,marginTop:25,fontSize:20,color:"#000"}}  onPress={()=>{
+                            const {navigate} = this.props.navigation;
+                            if (navigate) {
+                                navigate('login');
+                            }
+                        }}>请登录</Text>}
 
 
                     </View>
@@ -104,7 +109,13 @@ class userscreen extends Component {
 
 
                     <View style={styles.view}>
-                        < Text style={styles.tc}>退出登录</Text>
+                        < Text style={styles.tc} onPress={()=>{
+                            const {navigate} = this.props.navigation;
+                            if (navigate) {
+                                navigate('login');
+
+                            }
+                        }}>退出登录</Text>
                     </View>
                 </View>
             </View>

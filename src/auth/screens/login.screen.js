@@ -16,7 +16,8 @@ class loginscreen extends Component {
         super(props)
         this.state = {
             username: '',
-            userpwd: ''
+            userpwd: '',
+            isRememberPwd:true,
         }
 
     }
@@ -29,7 +30,14 @@ class loginscreen extends Component {
 
     };
 
-    // componentWillMount(){
+    componentWillMount(){
+        let user = global.config.user || {}
+        console.log("user --xxx--",user);
+        this.setState({
+            username:user.loginName|| '',
+            userpwd: user.passwd|| '',
+            isRememberPwd:user.passwd&&user.passwd.length !== 0 ? true : false,
+        })
     //     let toke = nil;
     //     if (toke.length !== 0){
     //         const {navigate} = this.props.navigation;
@@ -40,7 +48,7 @@ class loginscreen extends Component {
     //
     //     }
     //
-    // }
+    }
 
     loginInMainpage=function(){
         if(!this.state.username){
@@ -104,6 +112,12 @@ class loginscreen extends Component {
         // debugger;
         // 使用key来保存数据。这些数据一般是全局独有的，常常需要调用的。
         // 除非你手动移除，这些数据会被永久保存，而且默认不会过期。
+
+        if (this.state.isRememberPwd){
+            user.passwd = this.state.userpwd
+        }else {
+            user.passwd = ''
+        }
         console.log("user ----",user);
         storage.save({
             key: 'loginState',  // 注意:请不要在key中使用_下划线符号!
@@ -124,14 +138,17 @@ class loginscreen extends Component {
     }
     render() {
 
-        if(global.config.user!=null){//登录过就直接跳转到首页
-            const {navigate} = this.props.navigation;
-            if (navigate) {
-                navigate('Home');
-                return;
-            }
-        }
-
+        // if(global.config.user!=null){//登录过就直接跳转到首页
+        //     const {navigate} = this.props.navigation;
+        //     if (navigate) {
+        //         navigate('Home');
+        //         return;
+        //     }
+        // }
+        let user = global.user.userData || {};
+        console.log('isRememberPwd ---xx-x-x- ',this.state.isRememberPwd);
+        let loginName = user.loginName || '';
+        let loginPwd =  user.passwd || '';
         return (
             <View style={styles.container}>
                 <View style={{height:100,marginBottom:0,alignItems:'center'}}>
@@ -148,7 +165,8 @@ class loginscreen extends Component {
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
                         style={styles.input}
-                        //autoCapitalize = 'none'
+                        autoCapitalize = 'none'
+                        defaultValue={loginName&&loginName}
                         onChangeText={(input) => this.setState({username: input})}
                     />
                 </View>
@@ -162,14 +180,25 @@ class loginscreen extends Component {
                         clearButtonMode="while-editing"
                         secureTextEntry={true}
                         style={styles.input}
+                        defaultValue={loginPwd || ''}
                         onChangeText={(input) => this.setState({userpwd: input})}/>
                 </View>
                 <TouchableHighlight style={styles.login}
                                     underlayColor='#0078FF'
                                     onPress={()=>this.loginInMainpage()}><Text
                     style={styles.loginText}>登录</Text></TouchableHighlight>
-                <View style={styles.view}><Text style={styles.text}>记住密码</Text>
-                    <TouchableOpacity onPress={this._toForget}><Text style={styles.text}>忘记密码？</Text></TouchableOpacity></View>
+                <View style={styles.viewStyle}>
+                    <TouchableOpacity onPress={()=>{
+                        this.setState({
+                            isRememberPwd:this.state.isRememberPwd ? false:true,
+                        })
+                    }} style={styles.bottomPwd}>
+                        <Image source={this.state.isRememberPwd ? require('./selectImg.png') : require('./no_selectImg.png')} style={{width:20,height:20}}/>
+                        <Text>记住密码</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={this._toForget} style={styles.bottomPwd}><Text>忘记密码？</Text></TouchableOpacity>
+                </View>
             </View>)
     }
 }
@@ -204,15 +233,15 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         color: '#FFF'
     },
-    view:{
+    viewStyle:{
         flexDirection:'row',
-        marginTop:10,
+        marginTop:20,
     },
-    text:{marginLeft:40,
-        marginTop:10,
-        marginRight:120,
-        color:'red',
-        fontSize:14,
+    bottomPwd:{
+        flex:1,
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems:'center',
     },
     input:{height: 50,
         flex:1,

@@ -19,7 +19,9 @@ class forgetpassword extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            phoneNumber:'',
+            newPwd:'',
+            confirmPwd:'',
         }
     }
 
@@ -30,11 +32,10 @@ class forgetpassword extends Component {
     };
     forget() {
 
-        let userInfo = global.config.user || [];
+        let userInfo = global.config.user || {};
         console.log('userInfo ----',userInfo);
-
-        if(!this.userInfo.phoneNumber.length){
-            return alert('请输入旧密码')
+        if(this.state.phoneNumber !== userInfo.phoneNumber){
+            return alert('请输入绑定该账号的手机号码')
         }else if(!this.state.newPwd.length){
             return alert('请输入新密码')
         }else if(!this.state.confirmPwd.length){
@@ -43,7 +44,7 @@ class forgetpassword extends Component {
             return alert('输入的新密码不一致')
         }else {
 
-            let url = global.config.url + '/mobile/retrievePassword?password=' + this.state.newPwd + '&loginName=' + this.state.confirmPwd + '&phoneNumber=' + userInfo.phoneNumber;
+            let url = global.config.url + '/mobile/retrievePassword?password=' + this.state.newPwd +  '&phoneNumber=' + userInfo.phoneNumber;
             fetch(url, {
                 method: 'POST',
                 headers: {
@@ -53,13 +54,14 @@ class forgetpassword extends Component {
                 },
 
             }).then((response) => {
-                let result = JSON.parse(response._bodyText);
-                if (result.doResult == "1") {
-                    this.props.navigation.goBack();
-                    return alert('修改成功')
-                } else {
-                    return alert(result.message)
-                }
+                console.log('忘记密码 response -----',response);
+                // let result = JSON.parse(response._bodyText);
+                // if (result.doResult == "1") {
+                //     this.props.navigation.goBack();
+                //     return alert('修改成功')
+                // } else {
+                //     return alert(result.message)
+                // }
             }).catch((error) => {
                 console.error(error);
             });
@@ -80,9 +82,9 @@ class forgetpassword extends Component {
                     placeholder="请输入手机号码"
                     clearTextOnFocus={true}
                     clearButtonMode="while-editing"
-                    style={styles.input}
+                    style={{flex:1}}
                     //autoCapitalize = 'none'
-                    onChangeText={(input) => this.setState({username: input})}
+                    onChangeText={(input) => this.setState({phoneNumber: input})}
                 />
             </View>
 
@@ -96,9 +98,10 @@ class forgetpassword extends Component {
                         placeholder="请输入新密码"
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
-                        style={styles.input}
+                        style={{flex:1}}
+                        // defaultValue={this.state.newPwd}
                         //autoCapitalize = 'none'
-                        onChangeText={(input) => this.setState({username: input})}
+                        onChangeText={(input) => this.setState({newPwd: input})}
                     />
                 </View>
 
@@ -111,9 +114,10 @@ class forgetpassword extends Component {
                         placeholder="请确认输入新密码"
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
-                        style={styles.input}
+                        style={{flex:1}}
+                        // defaultValue={this.state.confirmPwd}
                         //autoCapitalize = 'none'
-                        onChangeText={(input) => this.setState({username: input})}
+                        onChangeText={(input) => this.setState({confirmPwd: input})}
                     />
                 </View>
 
@@ -149,20 +153,12 @@ const styles=StyleSheet.create({
 
     item: {
         flexDirection: 'row',
-        backgroundColor:"#fff",
-        width:width*0.9,
-        marginLeft:width*0.05,
         height:50,
         marginTop:10,
-    },
-
-    items: {
-        flexDirection: 'row',
-        backgroundColor:"#fff",
-        width:width*0.6,
-        marginLeft:width*0.05,
-        height:50,
-        marginTop:10,
+        marginHorizontal:20,
+        borderWidth:1,
+        borderColor:'#ccc',
+        borderRadius:8,
     },
 
     login: {

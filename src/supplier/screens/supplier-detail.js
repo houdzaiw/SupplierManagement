@@ -41,15 +41,16 @@ class supplier_detail extends Component {
     fetchData = () => {
         const {limit} = this.state;
         const { params } = this.props.navigation.state;
-
-        const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid;
-        console.log('url -----',url)
+        let yyid = global.config.user.yyid || ''
+        // const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid;
+        const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+yyid;
+        console.log('global.config.user -----',global.config.user)
         this.setState({loading: true});
 
         fetch(url)
             .then((response) => response.json())
             .then((response) => {
-            console.log('response -----',response)
+            console.log('供应商详情 response -----',response)
                 this.setState({
                     data: response.data,
                     error: response.error || null,
@@ -365,7 +366,7 @@ class supplier_detail extends Component {
                                 }}>备案公司资质证书: </Text>
                             <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
 
-                            {data.file.map((itemc, i) =>{
+                            {data.file&&data.file.map((itemc, i) =>{
                                 if(itemc.qualificationsInfoTypeCode!="113" && itemc.qualificationsInfoTypeCode!="114"
                                 && itemc.qualificationsInfoTypeCode!="115" && itemc.qualificationsInfoTypeCode!="116"
                                 && itemc.qualificationsInfoTypeCode!="118")
@@ -425,7 +426,7 @@ class supplier_detail extends Component {
                                     marginBottom: 8,
                                 }}>各级经营代理企业资格证书: </Text>
                             <View style={{height:1,backgroundColor:'#ccc',width:500}}/>
-                            {data.htFile.map((itemc, i) =>{
+                            {data.htFile&&data.htFile.map((itemc, i) =>{
 
                                 if(itemc.qualificationsInfoTypeCode=="113" || itemc.qualificationsInfoTypeCode=="114"
                                     || itemc.qualificationsInfoTypeCode=="115" || itemc.qualificationsInfoTypeCode=="116"
@@ -512,8 +513,12 @@ class supplier_detail extends Component {
         //const { params } = this.props.navigation.state;
         //alert(params.data)
         // console.log ("99999999999："+params.user);
-        if (!this.state.data.info) {
-            return this.renderLoadingView();
+        // console.log("info----",this.state.data.info);
+        // if (!this.state.data.info) {
+        //     this.renderLoadingView();
+        // }
+        if (this.state.data.length === 0){
+            return this.noMoreData();
         }
         return this.renderView();
 
