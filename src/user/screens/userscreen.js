@@ -154,7 +154,7 @@ const styles=StyleSheet.create({
         borderColor:'#fff',
         borderStyle:'solid',
         borderWidth:1,
-        marginTop:200,
+        marginTop:180,
         height:50,
         backgroundColor:"#fff",
     },

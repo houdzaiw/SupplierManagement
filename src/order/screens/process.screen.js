@@ -30,8 +30,10 @@ class processscreen extends Component {
     }
     fetchData (){
         const {limit} = this.state;
+        //传id
         const { params } = this.props.navigation.state;
-        const url = global.config.url+'/mobile/chart?ddh='+params.data+'&yyid=53010301';
+        const url = global.config.url+'/mobile/chart?ddh='+params.data+'&yyid='+global.config.user.yyid;
+        console.log('url-----',url);
         this.setState({loading: true});
         fetch(url)
             .then((response) => response.json())
@@ -64,6 +66,27 @@ class processscreen extends Component {
         );
     };
 
+
+    renderLoadingView()
+    {
+        return (
+            <View style={styles.containers}>
+                <Text>
+                    正在加载数据......
+                </Text>
+            </View>
+        );
+    }
+
+    noMoreData=()=>{
+        return (
+            <View style={{height:30,alignItems:'center',justifyContent:'flex-start',}}>
+                <Text style={{color:'#999999',fontSize:14,marginTop:5,marginBottom:5,}}>
+                    没有更多数据了
+                </Text>
+            </View>
+        );
+    }
 
 
 
@@ -100,6 +123,7 @@ class processscreen extends Component {
                     renderItem={(rowData) => this.renderRow(rowData)}
                 />
             </View>
+
         )
     }
 }

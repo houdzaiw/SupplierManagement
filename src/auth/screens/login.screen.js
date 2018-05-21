@@ -91,7 +91,7 @@ class loginscreen extends Component {
             .then((result) => {
                 if(result.doResult==1){
                     let user=JSON.parse(result.message);
-                     if(user.yhlx=='2'){
+                     if(user.yhlx=='1'){
                          this.loginSuccess(user);
 
                      }else{
@@ -146,7 +146,6 @@ class loginscreen extends Component {
         //     }
         // }
         let user = global.user.userData || {};
-        console.log('isRememberPwd ---xx-x-x- ',this.state.isRememberPwd);
         let loginName = user.loginName || '';
         let loginPwd =  user.passwd || '';
         return (
@@ -178,6 +177,7 @@ class loginscreen extends Component {
                         placeholder="请输入密码"
                         clearTextOnFocus={true}
                         clearButtonMode="while-editing"
+                        //密码变星号
                         secureTextEntry={true}
                         style={styles.input}
                         defaultValue={loginPwd || ''}
@@ -193,7 +193,7 @@ class loginscreen extends Component {
                             isRememberPwd:this.state.isRememberPwd ? false:true,
                         })
                     }} style={styles.bottomPwd}>
-                        <Image source={this.state.isRememberPwd ? require('./selectImg.png') : require('./no_selectImg.png')} style={{width:20,height:20}}/>
+                        <Image source={this.state.isRememberPwd ? require('./selectImg.png') : require('./no_selectImg.png')} style={{width:20,height:20,}}/>
                         <Text>记住密码</Text>
                     </TouchableOpacity>
 

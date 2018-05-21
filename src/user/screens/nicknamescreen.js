@@ -29,11 +29,13 @@ class nicknamescreen extends Component {
         titleStyle: {color: '#000000',},
         headerStyle:{backgroundColor:'#000000',},
         headerRight:(
-            <Text style={{right:10}} onPress={()=>{
+            <View style={{marginRight:25}}>
+            <Text style={{}} onPress={()=>{
                 _this.fetchWork();
             }}>
                 提交
             </Text>
+            </View>
         )
     };
     fetchWork(){

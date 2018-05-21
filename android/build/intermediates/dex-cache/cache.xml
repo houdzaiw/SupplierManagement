@@ -3,21 +3,39 @@
 
     <item
         is-multidex="false"
-        jar="/Users/yujingkun/Desktop/MyProject/SupplierManagement/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/yujingkun/Desktop/MyProject/HospitalApp/node_modules/react-native-image-picker/android/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9f95540d3b14aed0250ba28dd07beece0df87598">
+        <dex dex="/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/pre-dexed/debug/classes_525db5d55bde4d884c1c25c88b09a95610c32f04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yujingkun/Desktop/MyProject/HospitalApp/node_modules/react-native-vector-icons/android/build/intermediates/bundles/default/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
-        <dex dex="/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/pre-dexed/release/classes_03af3f134e2591284c255694e25a0a94a1d04568.jar" />
+        <dex dex="/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/pre-dexed/release/classes_fc3fd0b6db1f2ed0093fc5b6b550a9940df59c26.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/yujingkun/Desktop/MyProject/SupplierManagement/node_modules/react-native-image-picker/android/build/intermediates/bundles/default/classes.jar"
+        jar="/Users/yujingkun/.android/build-cache/79a36ac8fb4031d13188c37d29cbc7565521c5ef/output/jars/libs/infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="ad3c33c320b4d0b7504e97aa46a185dea8bd1f1c">
-        <dex dex="/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/pre-dexed/release/classes_47e2bc7797e3f046ef73d0b223de176bca214fcb.jar" />
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/pre-dexed/release/infer-annotations-4.0_02d94014f27e4ff14c1ddad260d65f73e3a71bb6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/yujingkun/.android/build-cache/79a36ac8fb4031d13188c37d29cbc7565521c5ef/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1a1444b104d20c6ecafc7af057a7df83f23bac4b">
+        <dex dex="/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/pre-dexed/release/classes_792e52f60ca126644f0f7b6c7cb7f574d7358e84.jar" />
     </item>
 
 </items>

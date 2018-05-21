@@ -36,7 +36,7 @@ class operation extends Component {
         });
         this.refreshing = true;
         const { params } = this.props.navigation.state;
-        let url = global.config.url+'/mobile/orderByDdh?ddh='+params.data+'&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=2'
+        let url = global.config.url+'/mobile/orderByDdh?ddh='+params.data+'&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=1'
         console.log('url --------',url);
         fetch(url)
             .then((response) => response.json())

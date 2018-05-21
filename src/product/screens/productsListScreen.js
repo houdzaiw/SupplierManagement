@@ -55,7 +55,7 @@ class productsListScreen extends Component {
         this.refreshing = true;
         // let url = `${api}?name=&pageNo=${start}&size=${count}&yyid=${global.config.user.yyid}`
         //let url = `http://localhost:8080/yywl-gyswl/mobile/listCp?name=${name}&pageNo=${pageNo}&size=${pageSize}&yyid=53010301`
-        let url = global.config.url+'/mobile/listCp'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=2'
+        let url = global.config.url+'/mobile/listCp'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=1'
         console.log('url ------',url)
         return fetch(url)
             .then((response) => response.json())
@@ -188,7 +188,7 @@ class productsListScreen extends Component {
     renderRow(item){
         return(
             <TouchableOpacity style={{
-                marginBottom: 8, flexDirection: 'column', marginLeft:5,
+                marginBottom: 8, flexDirection: 'column', marginLeft:5,marginHorizontal:10,
             }} onPress={() => this._onPress(item.id)}>
                 <View style={{flex: 1, flexDirection: 'row', marginLeft: 12, marginRight: 10,}}>
                     <Icon
@@ -280,7 +280,6 @@ class productsListScreen extends Component {
                                 marginRight: 10,
                                 marginBottom: 5,
                             }}>
-                            {item.packingUnit}
                         </Text>
                     </View>
                 </View>

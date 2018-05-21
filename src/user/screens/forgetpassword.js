@@ -55,13 +55,13 @@ class forgetpassword extends Component {
 
             }).then((response) => {
                 console.log('忘记密码 response -----',response);
-                // let result = JSON.parse(response._bodyText);
-                // if (result.doResult == "1") {
-                //     this.props.navigation.goBack();
-                //     return alert('修改成功')
-                // } else {
-                //     return alert(result.message)
-                // }
+                 let result = JSON.parse(response._bodyInit);
+                 if (result.doResult == "1") {
+                     this.props.navigation.goBack();
+                     return alert('修改成功')
+                 } else {
+                     return alert(result.message)
+                 }
             }).catch((error) => {
                 console.error(error);
             });
@@ -93,6 +93,7 @@ class forgetpassword extends Component {
                     <View style={{width:10}}></View>
                     <TextInput
                         ref="inputLoginName"
+                        secureTextEntry={true}//密码变星号
                         //autoFocus={true}
                         underlineColorAndroid="transparent"
                         placeholder="请输入新密码"
@@ -109,6 +110,7 @@ class forgetpassword extends Component {
                     <View style={{width:10}}></View>
                     <TextInput
                         ref="inputLoginName"
+                        secureTextEntry={true}//密码变星号
                         //autoFocus={true}
                         underlineColorAndroid="transparent"
                         placeholder="请确认输入新密码"

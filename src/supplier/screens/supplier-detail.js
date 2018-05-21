@@ -41,10 +41,10 @@ class supplier_detail extends Component {
     fetchData = () => {
         const {limit} = this.state;
         const { params } = this.props.navigation.state;
-        let yyid = global.config.user.yyid || ''
+        //let yyid = global.config.user.yyid || '';
         // const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid;
-        const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+yyid;
-        console.log('global.config.user -----',global.config.user)
+        const url = global.config.url+'/mobile/loadGys?id='+params.data+'&userId='+global.config.user.id+'&yyid='+global.config.user.yyid ;
+        console.log('url-----',url)
         this.setState({loading: true});
 
         fetch(url)

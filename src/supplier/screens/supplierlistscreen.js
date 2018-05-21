@@ -58,7 +58,7 @@ class supplierlistscreen extends Component {
         //let url = 'http://localhost:8080/yywl-gyswl/mobile/listGys?name=&pageNo=1&size=10&yyid=53010301'
         //let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+userData.yyid+'&userId='+userData.id+'&userLx='+userData.yhlx
 
-        let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=2'
+        let url = global.config.url+'/mobile/listGys'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=1'
         console.log('url ------',url)
         return fetch(url)
             .then((response) => response.json())
@@ -210,7 +210,7 @@ class supplierlistscreen extends Component {
     renderRow(item){
         return(
             <TouchableOpacity style={{
-                marginBottom: 8, flexDirection: 'column', marginLeft:5,
+                marginBottom: 8, flexDirection: 'column', marginLeft:5,marginHorizontal:10,
             }} onPress={() => this._onPress(item.info.id)}>
                 <View
                     style={{flex: 1, flexDirection: 'row', marginLeft: 12, marginRight: 10,}}>
@@ -270,7 +270,7 @@ class supplierlistscreen extends Component {
 
                 <View style={{flex: 1, flexDirection: 'row',paddingHorizontal:18}}>
                     <Text>物资：</Text>
-                    <View>
+                    <View style={{flexWrap:'wrap',marginHorizontal:5}}>
                         {item.listcps.map((items,index)=>(
                             <Text>
                                 {items.manufacturerName}

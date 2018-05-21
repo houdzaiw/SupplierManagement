@@ -1,6 +1,14 @@
 [
     {
+        "merged": "/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
         "merged": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/res/merged/release/color-v11/abc_background_cache_hint_selector_material_dark.xml",
         "source": "/Users/yujingkun/.android/build-cache/fa900626e74ae92e8f4e12eea885e2d0fd863ce4/output/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     },
     {

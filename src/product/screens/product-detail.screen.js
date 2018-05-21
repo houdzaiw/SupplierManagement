@@ -156,15 +156,6 @@ class productdetailscreen extends Component {
                                 <View >
                                     <Text style={{marginLeft:10,marginTop:10}}>{itemc.qualificationsInfoTypeName}</Text>
                                     <View style={{marginLeft:10,height:150,}}>
-                                        /*<TouchableOpacity onPress={()=>{
-                                            this.ImgMagify.open()
-                                            this.setState({
-                                                imgUrl:global.config.urlimg+itemc.imgs,
-                                            })
-                                        }}>
-                                            <Image source={{uri: global.config.urlimg+itemc.imgs[0]}}
-                                                   style={styles.img} />
-                                        </TouchableOpacity>*/
 
                                         <TouchableOpacity onPress={()=>{
                                             this.setState({

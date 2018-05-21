@@ -94,7 +94,7 @@ export default class agenda extends Component {
             if (selectDat){
                 //let url = 'http://118.190.157.145:8083/yywl-gyswl/mobile/order?userId='+global.config.user.id+'&yyid='+global.config.user.yyid+'&ssrqStart='+ssrqStart+'&ssrqEnd='+ssrqEnd+'&userLx='+global.config.user.yhlx
                 //let url = `http://118.190.157.145:8083/yywl-gyswl/mobile/order?userId=9dd836c1-6b33-440b-a310-65089e4024a9&yyid=53010301&ssrqStart=2018-02-01&ssrqEnd=2018-02-07`
-                let url = global.config.url+'/mobile/order'+'?userId='+global.config.user.id+'&yyid='+global.config.user.yyid+'&ssrqStart='+ssrqStart+'&ssrqEnd='+ssrqEnd+'&userLx=2'
+                let url = global.config.url+'/mobile/order'+'?userId='+global.config.user.id+'&yyid='+global.config.user.yyid+'&ssrqStart='+ssrqStart+'&ssrqEnd='+ssrqEnd+'&userLx=1'
                 console.log('url ------',url);
                 fetch(url, {
                     // method: 'POST',

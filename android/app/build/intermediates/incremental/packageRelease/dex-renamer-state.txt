@@ -1,4 +1,4 @@
-#Wed Mar 07 11:01:26 CST 2018
-base.0=/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
+#Mon May 21 17:41:32 CST 2018
+base.0=/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex
+file.0=/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex

@@ -52,7 +52,8 @@ class companysListScreen extends Component {
         // let url = `${api}?name=&pageNo=${start}&size=${count}&yyid=${global.config.user.yyid}`
         //let url = `http://localhost:8080/yywl-gyswl/mobile/listScs?name=${name}&pageNo=${pageNo}&size=${pageSize}&yyid=53010301`
         //let url = `http://localhost:8080/yywl-gyswl/mobile/listScs?name=&pageNo=1&size=10&yyid=53010301`
-        let url = global.config.url+'/mobile/listScs'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=2'
+        let url = global.config.url+'/mobile/listScs'+'?name='+name+'&pageNo='+pageNo+'&size=5&yyid='+global.config.user.yyid+'&userId='+global.config.user.id+'&userLx=1'
+        console.log('url ---- ',url);
         return fetch(url)
             .then((response) => response.json())
             .then((response) => {
@@ -182,7 +183,7 @@ class companysListScreen extends Component {
     renderRow(item){
         return(
             <TouchableOpacity style={{
-                marginBottom: 8, flexDirection: 'column', marginLeft:5,
+                marginBottom: 8, flexDirection: 'column', marginLeft:5,marginHorizontal:10,
             }} onPress={() => this._onPress(item.info.id)}>
                 <View style={{flex: 1, flexDirection: 'row', marginLeft: 12, marginRight: 10,}}>
                     <Icon

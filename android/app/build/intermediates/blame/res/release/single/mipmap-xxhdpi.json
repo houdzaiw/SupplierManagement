@@ -2,5 +2,9 @@
     {
         "merged": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/build/intermediates/res/merged/release/mipmap-xxhdpi/ic_launcher.png",
         "source": "/Users/yujingkun/Desktop/MyProject/SupplierManagement/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/build/intermediates/res/merged/release/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/Users/yujingkun/Desktop/MyProject/HospitalApp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     }
 ]
